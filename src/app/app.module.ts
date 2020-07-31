@@ -1,6 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule ,HttpClientJsonpModule} from '@angular/common/http';
+
+
+import { CommonService } from './services/common.service';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -14,9 +20,11 @@ import { PcontentComponent } from './components/pcontent/pcontent.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule ,
+    HttpClientJsonpModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
